@@ -1,25 +1,20 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShopAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Net;
-
-
-
-
 using System.Threading.Tasks;
 
-namespace OnlineShopAPI.Controllers
+namespace OnlineShopping_WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
         private readonly OnlineShopDBContext _context;
-        public  UserController(OnlineShopDBContext context)
+        public UserController(OnlineShopDBContext context)
         {
             _context = context;
         }
@@ -28,8 +23,8 @@ namespace OnlineShopAPI.Controllers
         {
             return Ok(_context.TblUser);
         }
-        
-       
+
+
         [HttpPost("UserLogin")]
         public IActionResult UserLogin(TblUser user)
         {
@@ -40,11 +35,12 @@ namespace OnlineShopAPI.Controllers
             }
             return Ok(new { status = "unsuccessful" });
         }
+
         [HttpPost("AddUser")]
         public IActionResult AddUser(TblUser user)
         {
             var existUser = _context.TblUser.Find(user.Useremail);
-            if (existUser ==null)
+            if (existUser == null)
             {
                 _context.TblUser.Add(user);
                 _context.SaveChanges();
@@ -55,8 +51,46 @@ namespace OnlineShopAPI.Controllers
                 return Ok(new { status = "unsuccessful" });
             }
         }
+        private bool CheckUserEmail(string useremail)
+        {
+            throw new NotImplementedException();
+        }
 
+        [Route("GetUserDetails")]
+        [HttpGet]
 
+        public IActionResult GetUserDetails(string umail)
+        {
+            var userdetails = (
+                    from u in _context.TblUser
+                    where u.Useremail == umail
+                    select u
+                ).ToList();
+
+            return Ok(userdetails);
+        }
+
+        [Route("GetUserOrders")]
+        [HttpGet]
+
+        public IActionResult GetUserOrders(string umail)
+        {
+
+            var userorders = (
+                    from orders in _context.TblOrder
+                    join p in _context.TblProduct on orders.Productid equals p.Productid
+                    join user in _context.TblUser on orders.Useremail equals user.Useremail
+                    where orders.Useremail == umail
+                    select new
+                    {
+                        orders.Orderid,
+                        orders.Orderdate,
+                        orders.Orderprice,
+                        orders.Orderquantity,
+                        p.Productname
+                    }).ToList();
+            return Ok(userorders);
+        }
 
     }
 }

@@ -29,13 +29,13 @@ namespace OnlineShopAPI.Models
         public virtual DbSet<TblUser> TblUser { get; set; }
         public virtual DbSet<TblWishlist> TblWishlist { get; set; }
         public virtual DbSet<TypeOfUsers> TypeOfUsers { get; set; }
+     
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseSqlServer("Server=LENOVO-PC\\SQLEXPRESS;Database=OnlineShopDB;Trusted_Connection=True;");
             }
         }
 

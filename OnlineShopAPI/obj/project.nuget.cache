@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "mRYVzvLOA0fic0AiV83JTEFUdCBBq9cBnedWmTdGXOcifgU9MOyqenX1mtMuLDSJ5L8Rb+tOUh74qeMc6EqShQ==",
+  "dgSpecHash": "/k/AKs1FzgP47TRSMs80cgJzlHJT4PKBr2qntzNlXmducoZOJuF1n7NJWv9SiXMBIj74VKp4BHAP7+Ug15vwAA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\OnlineShopAPI\\OnlineShopAPI\\OnlineShopAPI.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,7 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\3.1.18\\microsoft.entityframeworkcore.sqlite.3.1.18.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\3.1.18\\microsoft.entityframeworkcore.sqlite.core.3.1.18.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.18\\microsoft.entityframeworkcore.sqlserver.3.1.18.nupkg.sha512",
+    "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.18\\microsoft.entityframeworkcore.tools.3.1.18.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.19\\microsoft.extensions.caching.abstractions.3.1.19.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.19\\microsoft.extensions.caching.memory.3.1.19.nupkg.sha512",
